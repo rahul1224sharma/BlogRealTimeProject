@@ -25,10 +25,6 @@ def post_list_view(request,tag_slug=None):
         post_list=paginator.page(paginator.num_pages)
     return render(request,'BlogApp/post_list.html',{"post_list":post_list,'tag':tag})
 
-def post_detail_view(request,year,month,day,post):
-    post=get_object_or_404(Post,slug=post,publish__year=year,publish__month=month,publish__day=day);
-
-    return render(request,'BlogApp/post_detail.html',{'post':post})
 
 
 #from django.core.mail import send_mail
